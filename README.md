@@ -1,9 +1,13 @@
-# jumpandlearn
+# Jump & Learn
 
 # PHASER.IO EXAMPLE:
 https://labs.phaser.io/edit.html?src=src/games/firstgame/part10.js
 
+# Development Env
+https://devjumpandlearn.vercel.app/
 
+# Prod Env
+https://jumpandlearn.vercel.app/
 
 This template should help get you started developing with Vue 3 in Vite.
 
