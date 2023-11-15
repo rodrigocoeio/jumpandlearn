@@ -6,7 +6,8 @@ type dataType = {
   created: boolean,
   updating: boolean,
   rendering: boolean,
-  destroyed: boolean
+  destroyed: boolean,
+  configs: any
 }
 
 const mixins:any = [
@@ -17,7 +18,8 @@ const mixins:any = [
         created: false,
         updating: false,
         rendering: false,
-        destroyed: false
+        destroyed: false,
+        configs: store.configs
       }
     },
     computed: {
@@ -28,7 +30,7 @@ const mixins:any = [
     mounted() {
       store.components.push(this)
 
-      if (!this.preloaded && store.Phaser.isRunning) {
+      if (!this.preloaded && store.Phaser && store.Phaser.isRunning) {
         const scene = store.Phaser.scene.scenes[0]
         this.preload(scene)
         this.create(scene)

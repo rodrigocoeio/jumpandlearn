@@ -1,10 +1,6 @@
 <template>
-  <div>
-    <bird></bird>
-    <obstacle></obstacle>
-
-    <div id="game-canvas" class="container"></div>
-  </div>
+  <bird></bird>
+  <obstacle></obstacle>
 </template>
 
 <script>

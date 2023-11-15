@@ -1,5 +1,4 @@
 import store from '@/stores/store'
-import Game from '@/game'
 
 const GameMixins = []
 
@@ -9,9 +8,7 @@ GameMixins.push({
   },
 
   mounted() {
-    store.Game = this
-
-    store.Phaser = Game(store.configs, this, store.components)
+    store.initPhaser(this);
   },
 
   beforeUnmount() {

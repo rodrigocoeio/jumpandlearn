@@ -3,7 +3,7 @@
 export default (configs: any, gameComponent: any, objectComponents: any) => {
   const PhaserGame = new Phaser.Game({
     type: Phaser.AUTO,
-    parent: 'game-canvas', // ID of the element where the canvas will be placed
+    parent: configs.canvasElementId, // ID of the element where the canvas will be placed
     width: configs.width,
     height: configs.height,
     backgroundColor: '#000',
