@@ -17,6 +17,7 @@ export default {
 
   data() {
     return {
+      test: false
     }
   },
 
@@ -24,7 +25,6 @@ export default {
     preload(PhaserGame) {
       PhaserGame.load.image('background', 'images/background.png');
       PhaserGame.load.image('ground', 'images/ground.jpg');
-
     },
     create(PhaserGame) {
       PhaserGame.background = PhaserGame.add.image(this.configs.width / 2, 210, 'background');

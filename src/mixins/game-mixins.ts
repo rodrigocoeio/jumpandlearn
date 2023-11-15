@@ -19,18 +19,17 @@ GameMixins.push({
   },
 
   methods: {
-    preload(PhaserGame) {},
+    preload(PhaserGame: any) {},
 
-    create(PhaserGame) {},
+    create(PhaserGame: any) {},
 
-    update(PhaserGame) {},
+    update(PhaserGame: any) {},
 
-    render(PhaserGame) {},
+    render(PhaserGame: any) {},
 
     destroy() {
       if (store.Phaser && !store.destroyed) {
-        store.Phaser.destroy(true)
-        store.Phaser = false
+        store.Phaser.destroy(true);
         store.destroyed = true
       }
     }

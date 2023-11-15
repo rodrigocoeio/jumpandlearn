@@ -1,19 +1,29 @@
-const state = {
-  Phaser: {},    // Phaser Instance
+type STATE = {
+  Phaser: any,
+  Game: any,
+  components: any[],
+  configs: {
+    width: number,
+    height: number,
+    difficulty: string
+  },
+  started: boolean,
+  finished: boolean,
+  destroyed: boolean
+}
+
+const state: STATE = {
+  Phaser: null,    // Phaser Instance
   Game: false,      // Game Component
   components: [],
   configs: {        // Game Configs
     width: 360,
     height: 500,
-    difficulty: 'easy',
-    players: 0,
-    menu: true,
-    sound: true,
-    voice: true,
-    music: true
+    difficulty: 'easy'
   },
   started: false,     //  Game Started
   finished: true,
+  destroyed: false
 };
 
 const getters = {

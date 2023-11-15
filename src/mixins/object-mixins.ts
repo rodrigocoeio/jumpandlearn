@@ -1,15 +1,23 @@
 import store from '@/stores/store'
+import { defineComponent } from 'vue';
 
-export default [
-  {
-    data() {
+type dataType = {
+  preloaded: boolean,
+  created: boolean,
+  updating: boolean,
+  rendering: boolean,
+  destroyed: boolean
+}
+
+const mixins:any = [
+  defineComponent({
+    data(): dataType {
       return {
         preloaded: false,
         created: false,
         updating: false,
         rendering: false,
-        destroyed: false,
-        ...store
+        destroyed: false
       }
     },
     computed: {
@@ -32,10 +40,10 @@ export default [
       store.components = store.components.filter((object) => object != this)
     },
     methods: {
-      preload() {
+      preload(scene: any) {
         this.preloaded = true
       },
-      create() {
+      create(scene: any) {
         this.created = true
       },
       update() {
@@ -44,9 +52,11 @@ export default [
       render() {
         this.rendering = true
       },
-      destroy() {
+      destroy(Phaser: any) {
         this.destroyed = true
       }
     }
-  }
+  })
 ]
+
+export default mixins;
